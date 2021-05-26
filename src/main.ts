@@ -22,5 +22,3 @@ new Vue({
 if (process.env.NODE_ENV === 'development') {
   window.store = store;
 }
-
-store.dispatch('init');

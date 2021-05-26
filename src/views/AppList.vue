@@ -23,20 +23,6 @@
         <LeftMore slot="right" />
       </ListItem>
     </AeCard>
-
-    <template v-if="bookmarkedApps.length">
-      <Guide :template="$t('app.list.bookmarked-guide')" />
-
-      <div class="shortcuts">
-        <AppShortcut
-          v-for="(app, idx) in bookmarkedApps"
-          :key="`app-shortcut-aeternity-app-${idx}`"
-          v-bind="app"
-          :to="app.url"
-          @click="app.navigateTo"
-        />
-      </div>
-    </template>
   </MobilePage>
 </template>
 
@@ -47,17 +33,14 @@ import Guide from 'aepp-base/src/components/Guide.vue';
 import AeCard from 'aepp-base/src/components/AeCard.vue';
 import ListItem from 'aepp-base/src/components/ListItem.vue';
 import { LeftMore } from 'aepp-base/src/components/icons';
-import AppShortcut from 'aepp-base/src/components/AppShortcut.vue';
 import aeternityAppsPaths from '../../public/apps.json';
 
 export default {
   components: {
-    MobilePage, Guide, AeCard, ListItem, LeftMore, AppShortcut,
+    MobilePage, Guide, AeCard, ListItem, LeftMore,
   },
   computed: mapState({
     aeternityApps: (state, { pathToApp }) => aeternityAppsPaths.map(p => pathToApp(p)),
-    bookmarkedApps: ({ bookmarkedAppsPaths }, { pathToApp }) => bookmarkedAppsPaths
-      .map(p => pathToApp(p)),
   }),
 };
 </script>
