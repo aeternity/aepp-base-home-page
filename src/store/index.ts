@@ -8,6 +8,8 @@ import { PROTOCOL_DEFAULT } from 'aepp-base/src/lib/constants';
 
 Vue.use(Vuex);
 
+const IS_IFRAME = window.parent !== window;
+
 interface State {}
 
 export default new Vuex.Store<State>({
@@ -19,8 +21,11 @@ export default new Vuex.Store<State>({
     getUrlSet: () => (path: string) => {
       const url = `${PROTOCOL_DEFAULT}//${path}`;
       return {
-        url,
-        navigateTo: () => undefined,
+        url: IS_IFRAME ? undefined : url,
+        navigateTo: () => {
+          if (!IS_IFRAME) return;
+          window.location.href = url;
+        },
       };
     },
     pathToApp: (context, getters) => (path: string) => ({
