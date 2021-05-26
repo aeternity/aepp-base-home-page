@@ -69,9 +69,9 @@ export default {
       const app = pathToApp(this.$route.fullPath.slice(1));
       return {
         ...app,
-        categories: get(app, 'categories', []).map(c => capitalize(c)).join(', '),
+        categories: get(app, 'categories', []).map((c) => capitalize(c)).join(', '),
         networks: get(app, 'aeternity_network_ids', [])
-          .map(id => ({ ae_mainnet: 'Mainnet', ae_uat: 'Testnet' }[id] || id))
+          .map((id) => ({ ae_mainnet: 'Mainnet', ae_uat: 'Testnet' }[id] || id))
           .join(' | '),
         author_navigate_to: app.author_url && getUrlSet(app.author_url).navigateTo,
       };

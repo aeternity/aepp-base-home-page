@@ -40,7 +40,7 @@ export default {
     Page, Guide, AeCard, ListItem, LeftMore,
   },
   computed: mapState({
-    aeternityApps: (state, { pathToApp }) => aeternityAppsPaths.map(p => pathToApp(p)),
+    aeternityApps: (state, { pathToApp }) => aeternityAppsPaths.map((p) => pathToApp(p)),
   }),
 };
 </script>
