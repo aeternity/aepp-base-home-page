@@ -9,6 +9,12 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 
+Object.assign(Vue.prototype, {
+  $globals: {
+    IS_MOBILE_DEVICE: true,
+  },
+});
+
 Vue.use(VueI18n);
 Vue.config.productionTip = false;
 

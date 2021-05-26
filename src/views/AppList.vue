@@ -1,5 +1,5 @@
 <template>
-  <MobilePage
+  <Page
     class="app-list"
     fill="neutral"
     hide-tab-bar
@@ -23,12 +23,12 @@
         <LeftMore slot="right" />
       </ListItem>
     </AeCard>
-  </MobilePage>
+  </Page>
 </template>
 
 <script>
 import { mapState } from 'vuex';
-import MobilePage from 'aepp-base/src/components/mobile/Page.vue';
+import Page from 'aepp-base/src/components/Page.vue';
 import Guide from 'aepp-base/src/components/Guide.vue';
 import AeCard from 'aepp-base/src/components/AeCard.vue';
 import ListItem from 'aepp-base/src/components/ListItem.vue';
@@ -37,7 +37,7 @@ import aeternityAppsPaths from '../../public/apps.json';
 
 export default {
   components: {
-    MobilePage, Guide, AeCard, ListItem, LeftMore,
+    Page, Guide, AeCard, ListItem, LeftMore,
   },
   computed: mapState({
     aeternityApps: (state, { pathToApp }) => aeternityAppsPaths.map(p => pathToApp(p)),
