@@ -28,10 +28,8 @@ export default new Vuex.Store<State>({
       (state: object) => state,
       ({
         languages,
-        appsMetadata: { cachedManifests = undefined } = {},
       }: any) => ({
         languages,
-        appsMetadata: { cachedManifests },
       }),
     ),
     appsMetadataPlugin,
