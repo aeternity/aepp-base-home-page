@@ -9,6 +9,12 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 
+Object.assign(Vue.prototype, {
+  $globals: {
+    IS_MOBILE_DEVICE: true,
+  },
+});
+
 Vue.use(VueI18n);
 Vue.config.productionTip = false;
 
@@ -16,11 +22,9 @@ new Vue({
   router,
   store,
   i18n,
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount('#app');
 
 if (process.env.NODE_ENV === 'development') {
   window.store = store;
 }
-
-store.dispatch('init');

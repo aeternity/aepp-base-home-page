@@ -1,5 +1,5 @@
 <template>
-  <MobilePage
+  <Page
     class="app-details"
     fill="neutral"
     hide-tab-bar
@@ -44,13 +44,13 @@
     >
       {{ $t('app.list.launch') }}
     </AeButton>
-  </MobilePage>
+  </Page>
 </template>
 
 <script>
 import { mapState } from 'vuex';
 import { get, capitalize } from 'lodash-es';
-import MobilePage from 'aepp-base/src/components/mobile/Page.vue';
+import Page from 'aepp-base/src/components/Page.vue';
 import Guide from 'aepp-base/src/components/Guide.vue';
 import AeLink from 'aepp-base/src/components/AeLink.vue';
 import AeCard from 'aepp-base/src/components/AeCard.vue';
@@ -58,7 +58,7 @@ import AeButton from 'aepp-base/src/components/AeButton.vue';
 
 export default {
   components: {
-    MobilePage,
+    Page,
     Guide,
     AeLink,
     AeCard,
@@ -69,9 +69,9 @@ export default {
       const app = pathToApp(this.$route.fullPath.slice(1));
       return {
         ...app,
-        categories: get(app, 'categories', []).map(c => capitalize(c)).join(', '),
+        categories: get(app, 'categories', []).map((c) => capitalize(c)).join(', '),
         networks: get(app, 'aeternity_network_ids', [])
-          .map(id => ({ ae_mainnet: 'Mainnet', ae_uat: 'Testnet' }[id] || id))
+          .map((id) => ({ ae_mainnet: 'Mainnet', ae_uat: 'Testnet' }[id] || id))
           .join(' | '),
         author_navigate_to: app.author_url && getUrlSet(app.author_url).navigateTo,
       };

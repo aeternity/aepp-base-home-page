@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  chainWebpack: config => config
+  chainWebpack: (config) => config
     .module.rule('svg')
     .uses.clear().end()
     .oneOf('icon-component')
