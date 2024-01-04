@@ -9,7 +9,7 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "aepp-base": "github:aeternity/aepp-base#63442958c6b6e56f1cb2ee3ad778514a58ca2779",
+    "aepp-base": "github:aeternity/aepp-base#3d10470f215f9cadb9e4d3bf90e8986821c8f042",
     "core-js": "^3.35.0",
     "focus-visible": "^5.2.0",
     "lodash-es": "^4.17.21",
