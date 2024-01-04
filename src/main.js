@@ -10,7 +10,7 @@ import store from './store';
 
 Object.assign(Vue.prototype, {
   $globals: {
-    IS_MOBILE_DEVICE: true,
+    ENV_MOBILE_DEVICE: true,
   },
 });
 

@@ -81,16 +81,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~aepp-base/src/styles/typography';
+@use '~aepp-base/src/styles/functions';
+@use '~aepp-base/src/styles/typography';
+@use '~aepp-base/src/styles/variables';
 
 .app-details {
   header {
     display: flex;
 
     > img {
-      width: rem(48px);
-      height: rem(48px);
-      margin-right: rem(12px);
+      width: functions.rem(48px);
+      height: functions.rem(48px);
+      margin-right: functions.rem(12px);
     }
 
     > div {
@@ -104,17 +106,17 @@ export default {
 
       span, span a {
         @extend %face-sans-s;
-        color: $color-neutral-negative-1;
+        color: variables.$color-neutral-negative-1;
         text-decoration: none;
       }
     }
   }
 
   .ae-card {
-    margin-bottom: rem(24px);
-    padding: 0 rem(16px);
+    margin-bottom: functions.rem(24px);
+    padding: 0 functions.rem(16px);
     @extend %face-sans-s;
-    color: $color-neutral-negative-3;
+    color: variables.$color-neutral-negative-3;
 
     span {
       display: block;
@@ -126,7 +128,7 @@ export default {
 
     .networks {
       @extend %face-sans-xs;
-      color: $color-neutral-negative-1;
+      color: variables.$color-neutral-negative-1;
     }
   }
 }

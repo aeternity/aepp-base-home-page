@@ -46,15 +46,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~aepp-base/src/styles/functions';
+@use '~aepp-base/src/styles/functions';
 
 .app-list {
   .ae-card {
-    margin-bottom: rem(24px);
+    margin-bottom: functions.rem(24px);
   }
 
   .shortcuts {
-    margin: rem(20px) rem(-10px);
+    margin: functions.rem(20px) functions.rem(-10px);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
     grid-gap: 30px 10px;
