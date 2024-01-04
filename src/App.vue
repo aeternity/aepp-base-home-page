@@ -17,9 +17,4 @@ html, body {
   height: 1px;
   min-height: 100%;
 }
-
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 </style>

@@ -5,13 +5,12 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import { i18n } from 'aepp-base/src/store/plugins/ui/languages';
 import App from './App.vue';
-import './registerServiceWorker';
 import router from './router';
 import store from './store';
 
 Object.assign(Vue.prototype, {
   $globals: {
-    IS_MOBILE_DEVICE: true,
+    ENV_MOBILE_DEVICE: true,
   },
 });
 
