@@ -44,21 +44,3 @@ export default {
   }),
 };
 </script>
-
-<style lang="scss" scoped>
-@use '~aepp-base/src/styles/functions';
-
-.app-list {
-  .ae-card {
-    margin-bottom: functions.rem(24px);
-  }
-
-  .shortcuts {
-    margin: functions.rem(20px) functions.rem(-10px);
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    grid-gap: 30px 10px;
-    justify-items: center;
-  }
-}
-</style>
