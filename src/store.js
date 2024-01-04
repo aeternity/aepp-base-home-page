@@ -10,15 +10,13 @@ Vue.use(Vuex);
 
 const IS_IFRAME = window.parent !== window;
 
-interface State {}
-
-export default new Vuex.Store<State>({
+export default new Vuex.Store({
   plugins: [
     appsMetadataPlugin,
     languagesPlugin,
   ],
   getters: {
-    getUrlSet: () => (path: string) => {
+    getUrlSet: () => (path) => {
       const url = `${PROTOCOL_DEFAULT}//${path}`;
       return {
         url: IS_IFRAME ? undefined : url,
@@ -28,7 +26,7 @@ export default new Vuex.Store<State>({
         },
       };
     },
-    pathToApp: (context, getters) => (path: string) => ({
+    pathToApp: (context, getters) => (path) => ({
       ...getters['appsMetadata/get'](path),
       path,
       ...getters.getUrlSet(path),
