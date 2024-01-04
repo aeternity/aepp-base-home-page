@@ -2,6 +2,7 @@ const path = require('path');
 const addClassesToSVGElement = require('svgo/plugins/addClassesToSVGElement').fn;
 
 module.exports = {
+  publicPath: process.env.PUBLIC_PATH ?? '/',
   configureWebpack: {
     module: {
       rules: [{
