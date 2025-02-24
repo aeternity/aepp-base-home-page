@@ -1,5 +1,8 @@
 # aepp-base-home-page
 
+> [!WARNING] 
+> The home page was moved into [aepp-base](https://github.com/aeternity/aepp-base) repository
+
 ## Project setup
 ```
 npm install
